@@ -11,3 +11,7 @@
   object-fit: cover;
   border-radius: 6px;
 }
+.vist{
+  background-color: rgb(114, 138, 114);
+  color: rgb(255, 255, 255);
+}
