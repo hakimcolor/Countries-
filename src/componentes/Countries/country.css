@@ -1,6 +1,13 @@
-.country{
-  border: 2px solid red;
+.country {
+  border: 2px solid gray;
   border-radius: 20px;
   margin: 20px;
   padding: 20px;
+  width: 320px;
+}
+.flag-img {
+  width: 320px;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 6px;
 }

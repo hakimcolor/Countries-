@@ -1,17 +1,27 @@
-import React from 'react';
-
+import React, { useState } from 'react';
+import './Country.css';
 const Country = ({ country }) => {
+  const [visited,setVisited]=useState(false)
+  const hndlClick = () => {
+    console.log('button clicked', countrys);
+    setVisited(!visited)
+    
+  }
   const countrys = country.name.common;
   const img = country.flags.flags.png;
   const alt = country.flags.flags.alt;
   const countinents = country.continents.continents;
+  const Area = country.area.area;
   console.log(countrys);
   return (
-    <div >
-
-      <img src={img} alt={alt} />
-      <h1>Name: {countrys}</h1>
-      <h1>Countinents :{ countinents}</h1>
+    <div className="country">
+      <img className="flag-img " src={img} alt={alt} />
+      <h3>Name: {countrys}</h3>
+      <h3>Countinents :{countinents}</h3>
+      <h3>
+        Area:{Area} {Area > 300000 ? '(big country)' : '(small country)'}
+      </h3>
+      <button onClick={hndlClick}> { visited?'Visitead':'Not visited'}</button>
     </div>
   );
 };
