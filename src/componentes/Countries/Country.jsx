@@ -6,7 +6,6 @@ const Country = ({ country, handelcount }) => {
     // console.log('button clicked', countrys);
     setVisited(!visited);
     handelcount(countrys);
-    
   };
   const countrys = country.name.common;
   const img = country.flags.flags.png;

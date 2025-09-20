@@ -5,10 +5,9 @@ const Countries = ({ countriesPromise }) => {
   const [count, setCount] = useState([]);
   const handelcount = (countrys) => {
     // console.log('hello ');
-    const newvistCntry=[...count,countrys]
+    const newvistCntry = [...count, countrys];
     setCount(newvistCntry);
-    console.log('............. ',countrys);
-    
+    // console.log('............. ', countrys);
   };
   const countriesData = use(countriesPromise);
   const countries = countriesData.countries;
@@ -17,7 +16,12 @@ const Countries = ({ countriesPromise }) => {
     <div>
       <h2>Countries{countries.length}</h2>
       <h3>country Visited:{count.length}</h3>
-      {count}
+      <ul>
+        {count.map((k, index) => (
+          <li key={index}>{k}</li>
+        ))}
+      </ul>
+
       <div className="countries">
         {' '}
         {countries.map((country) => (
