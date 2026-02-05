@@ -2,15 +2,40 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
+  /* Light mode colors */
+  --bg-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --bg-secondary: rgba(255, 255, 255, 0.95);
+  --text-primary: #2d3748;
+  --text-secondary: #4a5568;
+  --text-muted: #666;
+  --card-bg: linear-gradient(145deg, #ffffff, #f0f0f0);
+  --card-border: rgba(0, 0, 0, 0.1);
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-medium: rgba(0, 0, 0, 0.15);
+  --visited-bg: linear-gradient(145deg, #e6fffa, #b2f5ea);
+  --visited-border: #4fd1c7;
+  --visited-text: #234e52;
+}
+
+[data-theme="dark"] {
+  /* Dark mode colors */
+  --bg-primary: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+  --bg-secondary: rgba(26, 32, 44, 0.95);
+  --text-primary: #f7fafc;
+  --text-secondary: #e2e8f0;
+  --text-muted: #a0aec0;
+  --card-bg: linear-gradient(145deg, #2d3748, #1a202c);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --shadow-light: rgba(0, 0, 0, 0.3);
+  --shadow-medium: rgba(0, 0, 0, 0.4);
+  --visited-bg: linear-gradient(145deg, #1a365d, #2c5282);
+  --visited-border: #3182ce;
+  --visited-text: #bee3f8;
 }
 
 a {
