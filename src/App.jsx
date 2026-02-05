@@ -1,5 +1,6 @@
 import React, { Suspense } from 'react';
 import Countries from './componentes/Countries';
+import './App.css';
 
 const countriesPromise = fetch(
   'https://openapi.programming-hero.com/api/all'
@@ -7,14 +8,15 @@ const countriesPromise = fetch(
 
 const App = () => {
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        padding: '20px',
-      }}
-    >
-      <Suspense fallback={<h1>the data is coming .....</h1>}>
+    <div className="app-container">
+      <Suspense
+        fallback={
+          <div className="loading-container">
+            <div className="loading-spinner"></div>
+            <h1 className="loading-text">Loading amazing countries...</h1>
+          </div>
+        }
+      >
         <Countries countriesPromise={countriesPromise} />
       </Suspense>
     </div>

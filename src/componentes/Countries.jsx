@@ -1,35 +1,51 @@
 import { use, useState } from 'react';
 import './Countries.css';
 import Country from './Countries/Country';
+
 const Countries = ({ countriesPromise }) => {
   const [count, setCount] = useState([]);
+
   const handelcount = (countrys) => {
-    // console.log('hello ');
     const newvistCntry = [...count, countrys];
     setCount(newvistCntry);
-    // console.log('............. ', countrys);
   };
+
   const countriesData = use(countriesPromise);
   const countries = countriesData.countries;
-  // console.log(countries);
+
   return (
     <div>
-      <h2>Countries{countries.length}</h2>
-      <h3>country Visited:{count.length}</h3>
-      <ul>
-        {count.map((k, index) => (
-          <li key={index}>{k}</li>
-        ))}
-      </ul>
+      <div className="countries-header">
+        <h1 className="countries-title">
+          🌍 Explore {countries.length} Countries
+        </h1>
+        <p className="countries-subtitle">
+          Discover amazing places around the world
+        </p>
+      </div>
+
+      {count.length > 0 && (
+        <div className="visited-section">
+          <h3 className="visited-title">
+            ✈️ Countries Visited: {count.length}
+          </h3>
+          <ul className="visited-list">
+            {count.map((country, index) => (
+              <li key={index} className="visited-item">
+                {country}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
 
       <div className="countries">
-        {' '}
         {countries.map((country) => (
           <Country
             key={country.ccn3.ccn3}
             handelcount={handelcount}
             country={country}
-          ></Country>
+          />
         ))}
       </div>
     </div>

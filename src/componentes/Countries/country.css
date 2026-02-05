@@ -1,17 +1,168 @@
 .country {
-  border: 2px solid gray;
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  border: none;
   border-radius: 20px;
-  margin: 20px;
-  padding: 20px;
-  width: 320px;
+  padding: 1.5rem;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.1),
+    0 1px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
 }
+
+.country::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.country:hover {
+  transform: translateY(-8px);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.15),
+    0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.country:hover::before {
+  transform: scaleX(1);
+}
+
 .flag-img {
-  width: 320px;
-  height: 190px;
+  width: 100%;
+  height: 200px;
   object-fit: cover;
-  border-radius: 6px;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
-.vist{
-  background-color: rgb(114, 138, 114);
-  color: rgb(255, 255, 255);
+
+.country:hover .flag-img {
+  transform: scale(1.02);
+}
+
+.country-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin: 1rem 0 0.5rem 0;
+  text-align: center;
+}
+
+.country-info {
+  font-size: 1rem;
+  color: #4a5568;
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.country-info strong {
+  color: #2d3748;
+  font-weight: 600;
+}
+
+.area-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+
+.big-country {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  color: white;
+}
+
+.small-country {
+  background: linear-gradient(135deg, #4ecdc4, #44a08d);
+  color: white;
+}
+
+.visit-button {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.visit-button:not(.visited) {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+}
+
+.visit-button:not(.visited):hover {
+  background: linear-gradient(135deg, #5a67d8, #6b46c1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.visit-button.visited {
+  background: linear-gradient(135deg, #48bb78, #38a169);
+  color: white;
+}
+
+.visit-button.visited:hover {
+  background: linear-gradient(135deg, #38a169, #2f855a);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(72, 187, 120, 0.4);
+}
+
+.vist {
+  background: linear-gradient(145deg, #e6fffa, #b2f5ea);
+  border: 2px solid #4fd1c7;
+  transform: scale(1.02);
+}
+
+.vist .country-name {
+  color: #234e52;
+}
+
+.vist .country-info {
+  color: #2d5a5a;
+}
+
+.vist .country-info strong {
+  color: #234e52;
+}
+
+.country-icon {
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .country {
+    padding: 1rem;
+  }
+  
+  .flag-img {
+    height: 150px;
+  }
+  
+  .country-name {
+    font-size: 1.2rem;
+  }
+  
+  .country-info {
+    font-size: 0.9rem;
+  }
 }
