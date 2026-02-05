@@ -1,8 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Country.css';
 
-const Country = ({ country, handelcount }) => {
+const Country = ({ country, handelcount, resetTrigger }) => {
   const [visited, setVisited] = useState(false);
+
+  // Reset visited state when resetTrigger changes
+  useEffect(() => {
+    if (resetTrigger > 0) {
+      setVisited(false);
+    }
+  }, [resetTrigger]);
 
   const hndlClick = () => {
     setVisited(!visited);
