@@ -12,12 +12,12 @@
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  text-shadow: 2px 2px 4px var(--shadow-light);
 }
 
 .countries-subtitle {
   font-size: 1.2rem;
-  color: #666;
+  color: var(--text-muted);
   margin-bottom: 1rem;
 }
 
@@ -27,6 +27,12 @@
   padding: 1.5rem;
   margin: 2rem 0;
   box-shadow: 0 10px 30px rgba(79, 172, 254, 0.2);
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .visited-section {
+  background: linear-gradient(135deg, #2d5a87 0%, #1e3a5f 100%);
+  box-shadow: 0 10px 30px rgba(45, 90, 135, 0.3);
 }
 
 .visited-title {

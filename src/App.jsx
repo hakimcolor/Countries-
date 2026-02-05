@@ -1,5 +1,6 @@
 import React, { Suspense } from 'react';
 import Countries from './componentes/Countries';
+import ThemeToggle from './componentes/ThemeToggle';
 import './App.css';
 
 const countriesPromise = fetch(
@@ -8,18 +9,21 @@ const countriesPromise = fetch(
 
 const App = () => {
   return (
-    <div className="app-container">
-      <Suspense
-        fallback={
-          <div className="loading-container">
-            <div className="loading-spinner"></div>
-            <h1 className="loading-text">Loading amazing countries...</h1>
-          </div>
-        }
-      >
-        <Countries countriesPromise={countriesPromise} />
-      </Suspense>
-    </div>
+    <>
+      <ThemeToggle />
+      <div className="app-container">
+        <Suspense
+          fallback={
+            <div className="loading-container">
+              <div className="loading-spinner"></div>
+              <h1 className="loading-text">Loading amazing countries...</h1>
+            </div>
+          }
+        >
+          <Countries countriesPromise={countriesPromise} />
+        </Suspense>
+      </div>
+    </>
   );
 };
 

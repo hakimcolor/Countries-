@@ -1,11 +1,11 @@
 .country {
-  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  background: var(--card-bg);
   border: none;
   border-radius: 20px;
   padding: 1.5rem;
   box-shadow: 
-    0 10px 30px rgba(0, 0, 0, 0.1),
-    0 1px 8px rgba(0, 0, 0, 0.06);
+    0 10px 30px var(--shadow-light),
+    0 1px 8px var(--shadow-light);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
   overflow: hidden;
@@ -27,8 +27,8 @@
 .country:hover {
   transform: translateY(-8px);
   box-shadow: 
-    0 20px 40px rgba(0, 0, 0, 0.15),
-    0 5px 15px rgba(0, 0, 0, 0.08);
+    0 20px 40px var(--shadow-medium),
+    0 5px 15px var(--shadow-light);
 }
 
 .country:hover::before {
@@ -41,7 +41,7 @@
   object-fit: cover;
   border-radius: 12px;
   margin-bottom: 1rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px var(--shadow-light);
   transition: transform 0.3s ease;
 }
 
@@ -52,14 +52,14 @@
 .country-name {
   font-size: 1.4rem;
   font-weight: 700;
-  color: #2d3748;
+  color: var(--text-primary);
   margin: 1rem 0 0.5rem 0;
   text-align: center;
 }
 
 .country-info {
   font-size: 1rem;
-  color: #4a5568;
+  color: var(--text-secondary);
   margin: 0.5rem 0;
   display: flex;
   align-items: center;
@@ -67,7 +67,7 @@
 }
 
 .country-info strong {
-  color: #2d3748;
+  color: var(--text-primary);
   font-weight: 600;
 }
 
@@ -127,21 +127,21 @@
 }
 
 .vist {
-  background: linear-gradient(145deg, #e6fffa, #b2f5ea);
-  border: 2px solid #4fd1c7;
+  background: var(--visited-bg);
+  border: 2px solid var(--visited-border);
   transform: scale(1.02);
 }
 
 .vist .country-name {
-  color: #234e52;
+  color: var(--visited-text);
 }
 
 .vist .country-info {
-  color: #2d5a5a;
+  color: var(--visited-text);
 }
 
 .vist .country-info strong {
-  color: #234e52;
+  color: var(--visited-text);
 }
 
 .country-icon {
